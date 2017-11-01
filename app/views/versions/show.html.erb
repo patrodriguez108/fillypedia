@@ -1,0 +1,14 @@
+<h1><%= @version.title %></h1>
+<p><%= @version.body %></p>
+
+
+
+<% if current_user.id == @version.author_id || is_admin? %>
+<h3>IT WORKED IT WORKED</h3>
+
+<!-- edit delete revisions -->
+<% end %>
+
+<!-- edit_article_version
+/articles/:article_id/versions/:id(.:format)
+/articles/:article_id/versions/:id/revisions/ -->
