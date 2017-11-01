@@ -1,4 +1,7 @@
-<%= form_for @version, url: {action: "create"} do |f| %>
-<%= f.text_field :title %>
-<%= f.cktext_area body, rows: 10 %>
-<%= f.submit %>
+<%= form_for :version, url: {action: "create"} do |f| %>
+  <p><%= label_tag(:title, "title") %></p>
+  <%= f.text_field :title %>
+  <p><%= label_tag(:body, "body") %></p>
+  <%= f.cktext_area :body, rows: 10 %>
+  <%= f.submit %>
+<% end %>

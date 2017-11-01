@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/about', to: 'pages#about'
-
-  get '/articles/new', to: 'articles#new'
+  resources :articles do
+    resources :versions
+  end
+  # get '/articles/new', to: 'articles#new'
+  # post '/articles/:article_id/versions', to: 'verisons#create'
 end
