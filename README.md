@@ -8,6 +8,10 @@ We are Team Penelope Guten-Morgan
 - Charles Weber
 - Victoria Luc
 
+### Schema
+
+[Schema](schema.png)
+
 ### User Stories
 
 - Different user types
