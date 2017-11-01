@@ -1,5 +1,8 @@
 <h1>Homepage</h1>
 
 <aside><%= render @categories %></aside>
-<main><%= render @recent_articles %></main>
+<main>
+  <%= render partial: "feature", object: @featured_article %>
+  <%= render @recent_articles %>
+</main>
 
