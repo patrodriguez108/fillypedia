@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20171101175826) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.boolean "published", default: false
+    t.boolean "is_published", default: false
     t.string "photo_url"
     t.integer "click_count"
     t.integer "published_version_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20171101175826) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
