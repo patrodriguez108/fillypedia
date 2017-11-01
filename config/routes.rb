@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :versions
   end
   # get '/articles/new', to: 'articles#new'
-  # post '/articles/:article_id/versions', to: 'verisons#create'
+  # post '/articles/:article_id/versions', to: 'versions#create'
 end

@@ -9,7 +9,20 @@
 
   <body>
     <nav>
-
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to"About", about_path %></li>
+      <% if logged_in? %>
+          <li><%= link_to"Profile", user_path(current_user) %></li>
+        <% end %>
+      </ul>
+      <div class="buttons">
+        <% if logged_in? %>
+          <button class="button"><%= link_to "Logout", logout_path, method: :delete %></button>
+        <% else %>
+          <button class="button"><%= link_to "Register", new_user_path %></button>
+          <button class="button"><%= link_to "Login", login_path %></button>
+        <% end %>
       </div>
 
     </nav>
