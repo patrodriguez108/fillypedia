@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :username, :email, { presence: true, uniqueness: true }
+  validates :username, :email, { presence: true }
+  validates :username, :email, uniqueness: { message: "The information you entered is invalid" }
 
 end
