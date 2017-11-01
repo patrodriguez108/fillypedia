@@ -10,7 +10,7 @@ We are Team Penelope Guten-Morgan
 
 ### Schema
 
-[Schema](schema.png)
+[schema.png](schema.png)
 
 ### User Stories
 
