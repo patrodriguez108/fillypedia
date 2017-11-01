@@ -6,9 +6,11 @@
 <% if current_user.id == @version.author_id || is_admin? %>
 <h3>IT WORKED IT WORKED</h3>
 
-<!-- edit delete revisions -->
+<button class="button"><%= link_to "Edit", new_article_version_path(@version.article_id) %></button>
+
+<button class="button"><%= link_to "Delete", "/articles/#{@version.article_id}", method: :delete, data: { confirm: 'Are you certain?' } %></button>
+
+<button class="button"><%= link_to "Versions", article_versions_path(@version.article_id) %></button>
+
 <% end %>
 
-<!-- edit_article_version
-/articles/:article_id/versions/:id(.:format)
-/articles/:article_id/versions/:id/revisions/ -->
