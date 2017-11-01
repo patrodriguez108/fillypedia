@@ -16,7 +16,7 @@
           <li><%= link_to"Profile", user_path(current_user) %></li>
         <% end %>
       </ul>
-      <div class="buttons">
+      <div class="login-register">
         <% if logged_in? %>
           <button class="button"><%= link_to "Logout", logout_path, method: :delete %></button>
         <% else %>
