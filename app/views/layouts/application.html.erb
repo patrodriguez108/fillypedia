@@ -18,12 +18,7 @@
         <% end %>
       </ul>
       <div class="buttons">
-        <% if logged_in? %>
-          <button class="button"><%= link_to "Logout", logout_path, method: :delete %></button>
-        <% else %>
-          <button class="button"><%= link_to "Register", new_user_path %></button>
-          <button class="button"><%= link_to "Login", login_path %></button>
-        <% end %>
+
       </div>
 
     </nav>
