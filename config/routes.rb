@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get '/about', to: 'pages#about'
+
+  get '/signup', to: 'users#new', as: 'new_user'
+  post '/users', to: 'users#create'
+
+  get '/login', to: 'sessions#new', as: 'login'
 end
