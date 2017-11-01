@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20171101175826) do
   create_table "articles", force: :cascade do |t|
     t.boolean "is_published", default: false
     t.string "photo_url"
-    t.integer "click_count"
+    t.integer "click_count", default: 0
     t.integer "published_version_id"
+    t.boolean "is_featured", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
