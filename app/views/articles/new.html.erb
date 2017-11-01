@@ -1,4 +1,4 @@
-<%= form_for :version, url: {action: "create"} do |f| %>
+<%= form_for :version, url: "/articles/#{@article.id}/versions", method: 'post' do |f| %>
   <p><%= label_tag(:title, "title") %></p>
   <%= f.text_field :title %>
   <p><%= label_tag(:body, "body") %></p>
