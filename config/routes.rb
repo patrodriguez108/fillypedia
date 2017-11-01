@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   get '/about', to: 'pages#about'
 
-  resources :categories do
-    resources :articles
+  resources :categories
+
+  resources :articles do
+    resources :versions
   end
 
   get '/signup', to: 'users#new', as: 'new_user'
