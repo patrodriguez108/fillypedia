@@ -2,7 +2,7 @@
 
 <aside><%= render @categories %></aside>
 <main>
-  <%= render partial: "feature", object: @featured_article %>
-  <%= render @recent_articles %>
+  <div class="feature"><%= render partial: "feature", object: @featured_article %></div>
+  <div class="recent-articles"><ul><%= render @recent_articles %></ul></div>
 </main>
 

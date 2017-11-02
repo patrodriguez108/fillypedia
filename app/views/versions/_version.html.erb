@@ -1,1 +1,4 @@
-<h3><%= link_to version.title, article_version_path(version.article_id, version.id) %></h3>
+<li>
+  <%= link_to version.title, article_version_path(version.article_id, version.id), class: "version-title" %>
+  <%= image_tag version.photo_url, class: "version-photo" %>
+</li>
