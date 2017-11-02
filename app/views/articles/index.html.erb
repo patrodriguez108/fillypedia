@@ -1,7 +1,8 @@
-<% if @search_results %>
+<% if @search_results.length > 0 %>
 <% p "falaflalfalfa" %>
   <% @search_results.each do |version| %>
    <% p "++++++++++++++++" %>
+   <% p version %>
   <%= link_to version.title, article_version_path(version.article, version) %>
   <% end %>
 <% else %>
