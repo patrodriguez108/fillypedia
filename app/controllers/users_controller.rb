@@ -17,6 +17,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def drafts
+    @user = User.find(params[:id])
+
+  end
+
+
 
 
   private

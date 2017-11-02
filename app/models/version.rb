@@ -2,22 +2,20 @@ class Version < ApplicationRecord
   belongs_to :article
   belongs_to :author, class_name: "User"
 
+  validates :title, :body, {presence: true}
+
   def self.search(search)
-    all_articles = Article.where(is_published: true)
-    p all_articles_versions = []
-    all_articles.each {|article| all_articles_versions << Version.find(article.published_version_id)}
-
-    drop_down_search = all_articles_versions.select {|version| version.title == search}
-    p drop_down_search
-
-    titles = drop_down_search.pluck(:title)
-
+    all_articles = Article.drop_version
+    result = []
+    all_articles.each {|version| result << version if version.title == search}
+    titles = Article.drop_title
     if titles.include?(search)
-      drop_down_search
+      result
     elsif search
-      where('lower(title) LIKE ?', "%#{search}%")
-    else
-      all
+      versions = where('lower(title) LIKE ?', "%#{search}%")
+      all_versions_collected = []
+      versions.each {|version| all_versions << version if version.article.is_published }
+      all_versions_collected
     end
   end
 end
