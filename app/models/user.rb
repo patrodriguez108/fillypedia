@@ -16,4 +16,14 @@ class User < ApplicationRecord
   def published_articles
     self.articles.where(:is_published => true)
   end
+
+  def current_draft_versions
+    not_yet_published_articles.map { |article|
+      article.versions.last
+    }
+  end
+
+  def not_yet_published_articles
+    self.articles.where(:is_published => false)
+  end
 end
