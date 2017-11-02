@@ -10,7 +10,6 @@ class VersionsController < ApplicationController
   end
 
   def create
-    p params
     @article = Article.find(params[:article_id])
     @version = Version.new(version_params)
     @version.author = current_user
