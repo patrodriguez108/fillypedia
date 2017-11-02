@@ -7,8 +7,7 @@ class VersionsController < ApplicationController
   def new
     @article = Article.find(params[:article_id])
     @previous_version = Version.find(@article.published_version_id)
-    p "____________________________________________"
-    p @previous_version.body
+    @previous_version.body
     @version = Version.new(title: @previous_version.title, photo_url: @previous_version.photo_url ,body: @previous_version.body)
   end
 
@@ -24,6 +23,7 @@ class VersionsController < ApplicationController
     @version.article = @article
     if @version.save
       if params[:is_published] == "1"
+        @article.is_published = true
         @article.published_version_id = @version.id
         @article.save
       end
