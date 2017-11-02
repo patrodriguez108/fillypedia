@@ -3,7 +3,6 @@
   <head>
     <title>Fillypedia</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -25,7 +24,6 @@
           <button class="button"><%= link_to "Login", login_path %></button>
         <% end %>
       </div>
-
     </nav>
     <%= yield %>
   </body>
