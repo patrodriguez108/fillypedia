@@ -1,19 +1,21 @@
-<% if @errors %>
-  <% @errors.each do |message| %>
-  <ul>
-    <li><%= message %></li>
-  </ul>
+<main>
+  <% if @errors %>
+    <% @errors.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+    <% end %>
   <% end %>
-<% end %>
 
-<%= form_for :version, url: "/articles/#{@article.id}/versions", method: 'post' do |f| %>
-  <p><%= label_tag(:title, "Title") %></p>
-  <%= f.text_field :title %>
-  <p><%= label_tag(:photo_url, "Featured photo") %></p>
-  <%= f.text_field :photo_url %>
-  <p><%= label_tag(:body, "Body") %></p>
-  <%= f.cktext_area :body, rows: 10 %>
-  <%= check_box_tag(:is_published) %>
-  <%= label_tag(:is_published, "Publish This Version?") %>
-    <%= f.submit %>
-<% end %>
+  <%= form_for :version, url: "/articles/#{@article.id}/versions", method: 'post' do |f| %>
+    <p><%= label_tag(:title, "Title") %></p>
+    <%= f.text_field :title %>
+    <p><%= label_tag(:photo_url, "Featured photo") %></p>
+    <%= f.text_field :photo_url %>
+    <p><%= label_tag(:body, "Body") %></p>
+    <%= f.cktext_area :body, rows: 10 %>
+    <%= check_box_tag(:is_published) %>
+    <%= label_tag(:is_published, "Publish This Version?") %>
+      <%= f.submit %>
+  <% end %>
+</main>

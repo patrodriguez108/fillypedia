@@ -1,8 +1,10 @@
-<ul>
-  <% @versions.each do |version| %>
-    <li>
-      <div><%= image_tag version.photo_url, class: "version-photo" %></div>
-      <div><%= link_to version.title, article_version_path(version.article, version), class: "version-title" %></div>
-    </li>
-  <% end %>
-</ul>
+<main>
+  <ul>
+    <% @versions.each do |version| %>
+      <li>
+       <%= image_tag version.photo_url, class: "version-photo" %>
+        <%= link_to version.title, article_version_path(version.article, version), class: "version-title" %>
+      </li>
+    <% end %>
+  </ul>
+</main>
