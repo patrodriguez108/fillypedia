@@ -13,9 +13,9 @@ class Version < ApplicationRecord
       result
     elsif search
       versions = where('lower(title) LIKE ?', "%#{search}%")
-      all_versions_collected = []
-      versions.each {|version| all_versions_collected << version if version.article.is_published }
-      all_versions_collected
+      matching_ids = versions.map { |version| version.article_id }
+      unique_article_ids = matching_ids.uniq
+      unique_article_ids.map { |article_id| Article.find(article_id).published_version }
     end
   end
 end
