@@ -3,7 +3,7 @@
 
 
 
-<% if current_user.id == @version.author_id || is_admin? %>
+<% if authorized?(User.find(@version.author_id)) || is_admin? %>
 <h3>IT WORKED IT WORKED</h3>
 
 <button class="button"><%= link_to "Edit", new_article_version_path(@version.article_id) %></button>
