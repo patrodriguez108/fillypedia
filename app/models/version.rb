@@ -14,7 +14,7 @@ class Version < ApplicationRecord
     elsif search
       versions = where('lower(title) LIKE ?', "%#{search}%")
       all_versions_collected = []
-      versions.each {|version| all_versions << version if version.article.is_published }
+      versions.each {|version| all_versions_collected << version if version.article.is_published }
       all_versions_collected
     end
   end
