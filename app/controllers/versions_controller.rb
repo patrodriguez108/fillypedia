@@ -6,7 +6,9 @@ class VersionsController < ApplicationController
 
   def new
     @article = Article.find(params[:article_id])
-    @previous_version = Version.find_by(article_id: @article.id)
+    @previous_version = Version.find(@article.published_version_id)
+    p "____________________________________________"
+    p @previous_version.body
     @version = Version.new(title: @previous_version.title, photo_url: @previous_version.photo_url ,body: @previous_version.body)
   end
 
@@ -16,7 +18,6 @@ class VersionsController < ApplicationController
   end
 
   def create
-    p params
     @article = Article.find(params[:article_id])
     @version = Version.new(version_params)
     @version.author = current_user
