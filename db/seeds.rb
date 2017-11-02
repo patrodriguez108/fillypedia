@@ -28,22 +28,22 @@ Article.create(is_published: false,  click_count: rand(1..10), is_featured: fals
 Version.create(title: "The Worst Saddles", body: Faker::Lorem.paragraph(2), photo_url: "https://i.ytimg.com/vi/8MQ6aHPO7PQ/maxresdefault.jpg", article_id: 2, author_id: rand(1..6))
 
 #3
-Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 2  )
+Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 3  )
 
 Version.create(title: "Best Horse Names", body: Faker::Lorem.paragraph(2), photo_url: "https://i.pinimg.com/736x/8c/87/f1/8c87f181412dd85b618ffa21da105ed3.jpg", article_id: 3 ,author_id: rand(1..6))
 
 #4
-Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 3)
+Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 4)
 
 Version.create(title: "Best Horse Person Names", body: Faker::Lorem.paragraph(2),photo_url: "https://i.ytimg.com/vi/y1U1Eqfdg7w/maxresdefault.jpg", article_id: 4 ,author_id: rand(1..6))
 
 #5
-Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 4)
+Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 5)
 
 Version.create(title: "The Best Breeds", body: Faker::Lorem.paragraph(2), photo_url: "https://s-i.huffpost.com/gen/1758711/images/o-HORSE-facebook.jpg", article_id: 5 ,author_id: rand(1..6))
 
 #6
-Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 5)
+Article.create(is_published: true, click_count: rand(1..10), is_featured: false, published_version_id: 6)
 
 Version.create(title: "The Worst Breeds", body: Faker::Lorem.paragraph(2), photo_url: "http://www.petermeadephotography.com/img/s/v-3/p1430042462-3.jpg", article_id: 6 ,author_id: rand(1..6))
 

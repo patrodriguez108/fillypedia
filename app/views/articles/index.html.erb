@@ -1,0 +1,5 @@
+<% if @search_results %>
+  <%= render partial: "article", object: @search_results %>
+<% else %>
+  <p>There are no results found...</p>
+<% end %>
