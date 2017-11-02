@@ -2,7 +2,7 @@
 <% p "falaflalfalfa" %>
   <% @search_results.each do |version| %>
    <% p "++++++++++++++++" %>
-  <%= link_to version.title, article_version_path(version) %>
+  <%= link_to version.title, article_version_path(version.article, version) %>
   <% end %>
 <% else %>
   <p>There are no results found...</p>

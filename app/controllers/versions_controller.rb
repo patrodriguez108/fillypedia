@@ -6,7 +6,7 @@ class VersionsController < ApplicationController
 
   def index
     @article = Article.find(params[:article_id])
-    @versions = @article.all
+    @versions = @article.versions
   end
 
   def create
