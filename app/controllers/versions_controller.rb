@@ -1,5 +1,6 @@
 class VersionsController < ApplicationController
   def show
+    @categories = Category.all
     @article = Article.find(params[:article_id])
     @version = Version.find(params[:id])
   end
