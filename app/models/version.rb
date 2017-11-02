@@ -2,6 +2,8 @@ class Version < ApplicationRecord
   belongs_to :article
   belongs_to :author, class_name: "User"
 
+  validates :title, :body, {presence: true}
+
   def self.search(search)
     all_articles = Article.where(is_published: true)
     p all_articles_versions = []
