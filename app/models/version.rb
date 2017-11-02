@@ -4,7 +4,7 @@ class Version < ApplicationRecord
 
   def self.search(search)
     if search
-      where('title LIKE ?', "%#{search}%").select(:title).distinct
+      where('title LIKE ?', "%#{search}%")
     else
       all
     end

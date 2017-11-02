@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
 
   def index
-    @search_result = Version.search(params[:search]) if params[:search]
-    p "_____________________"
+    p "i am in index articles"
+    p params[:search]
+    @search_results = Version.search(params[:search]) if params[:search]
     p @search_result
   end
 
