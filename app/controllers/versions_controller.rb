@@ -6,8 +6,9 @@ class VersionsController < ApplicationController
   end
 
   def new
+    version_id = request.referrer.split('/')[-1]
     @article = Article.find(params[:article_id])
-    @previous_version = Version.find(@article.published_version_id)
+    @previous_version = Version.find(version_id)
     @previous_version.body
     @version = Version.new(title: @previous_version.title, photo_url: @previous_version.photo_url ,body: @previous_version.body)
   end
@@ -30,6 +31,7 @@ class VersionsController < ApplicationController
       end
       redirect_to root_path, notice: "The version has been successfully created"
     else
+      @errors = @version.errors.full_messages
       render "new"
     end
   end
