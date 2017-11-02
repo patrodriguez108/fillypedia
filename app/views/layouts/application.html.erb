@@ -9,22 +9,21 @@
 
   <body>
     <nav>
+
       <div class="nav-links">
         <ul>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to"About", about_path %></li>
-        <% if logged_in? %>
-            <li><%= link_to"Profile", user_path(current_user) %></li>
-          <% end %>
+         <% if logged_in? %>
+          <li><%= link_to"#{current_user.username}", user_path(current_user) %></li>
+        <% end %>
         </ul>
       </div>
 
       <div class="search-form">
-        <% p "------------------" + articles_path %>
         <%= form_tag articles_path, method: 'get' do %>
             <%= text_field_tag :search, params[:search] %>
             <%= submit_tag "Search", name: nil %>
-        <% end %>
       </div>
 
       <div class="login-register">

@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.create(username:"admin", email: "admin@admin.com", is_admin: true, password: "password")
 
 5.times do
@@ -47,16 +39,9 @@ Article.create(is_published: true, click_count: rand(1..10), is_featured: false,
 
 Version.create(title: "The Worst Breeds", body: Faker::Lorem.paragraph(2), photo_url: "http://www.petermeadephotography.com/img/s/v-3/p1430042462-3.jpg", article_id: 6 ,author_id: rand(1..6))
 
-
 CategoryArticle.create(category_id: 1, article_id: 1)
 CategoryArticle.create(category_id: 1, article_id: 2)
 CategoryArticle.create(category_id: 2, article_id: 3)
 CategoryArticle.create(category_id: 2, article_id: 4)
 CategoryArticle.create(category_id: 3, article_id: 5)
 CategoryArticle.create(category_id: 3, article_id: 6)
-
-
-
-
-
-

@@ -1,4 +1,13 @@
 class VersionsController < ApplicationController
+  def show
+    @article = Article.find(params[:article_id])
+    @version = Version.find(params[:id])
+  end
+
+  def index
+    @article = Article.find(params[:article_id])
+    @versions = @article.all
+  end
 
   def create
     @article = Article.find(params[:article_id])
