@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
+    @categories = Category.all
     @search_results = Version.search(params[:search]) if params[:search]
   end
 
