@@ -1,3 +1,5 @@
+require 'faker'
+
 User.create(username:"admin", email: "admin@admin.com", is_admin: true, password: "password")
 
 5.times do
