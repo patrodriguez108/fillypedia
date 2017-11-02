@@ -7,7 +7,7 @@ class VersionsController < ApplicationController
 
   def new
     @article = Article.find(params[:article_id])
-    @previous_version = Version.find(@article.published_version_id)
+    @previous_version = Version.find(request.referrer[-1])
     @previous_version.body
     @version = Version.new(title: @previous_version.title, photo_url: @previous_version.photo_url ,body: @previous_version.body)
   end
