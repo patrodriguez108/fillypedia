@@ -2,6 +2,7 @@ class VersionsController < ApplicationController
   def show
     @categories = Category.all
     @article = Article.find(params[:article_id])
+    @article.increment!(:click_count)
     @version = Version.find(params[:id])
   end
 

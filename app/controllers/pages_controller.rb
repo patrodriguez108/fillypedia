@@ -6,8 +6,8 @@ class PagesController < ApplicationController
 
     @categories = Category.all
 
-    featured_article_version_id = Article.where(is_featured: true, is_published: true).first.published_version_id
-    @featured_article = Version.find(featured_article_version_id)
+    @featured_article_id = Article.most_clicked_article.published_version_id
+    @featured_article = Version.find(@featured_article_id)
   end
 
   def about
