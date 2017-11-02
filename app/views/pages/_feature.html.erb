@@ -1,3 +1,4 @@
 <h3>Featured Article:</h3>
-<h1><%= link_to @featured_article[:title] %></h1>
+<% @featured_article %>
+<h1><%= link_to @featured_article[:title], article_version_path(@featured_article.article, @featured_article) %></h1>
 <%= image_tag @featured_article[:photo_url] %>

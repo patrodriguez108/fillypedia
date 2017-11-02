@@ -1,0 +1,5 @@
+<h2>Categories</h2>
+
+<% @articles.each do |version| %>
+  <%= link_to version.title, article_version_path(version.article, version) %>
+<% end %>
