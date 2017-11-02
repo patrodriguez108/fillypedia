@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
     @version = Version.new(version_params)
     if !@version.title.empty? && !@version.body.empty?
       @article = Article.create
+      Category.find(params[:category]).articles << @article
       @version.author = current_user
       @version.article = @article
       @version.save

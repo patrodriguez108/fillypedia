@@ -3,6 +3,8 @@
 <% end %>
 
 <%= form_for :version, url: "/articles", method: 'post' do |f| %>
+  <p><%= label_tag(:category, "category") %></p>
+  <%= select_tag(:category, options_for_select(categories_for_dropdown)) %>
   <p><%= label_tag(:title, "title") %></p>
   <%= f.text_field :title %>
   <p><%= label_tag(:photo_url, "featured photo") %></p>
