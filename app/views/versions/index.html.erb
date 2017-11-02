@@ -1,6 +1,8 @@
 <ul>
   <% @versions.each do |version| %>
-    <li><%= version.title %></li>
-    <li><%= version.photo_url %></li>
+    <li>
+      <div><%= image_tag version.photo_url, class: "version-photo" %></div>
+      <div><%= link_to version.title, article_version_path(version.article, version), class: "version-title" %></div>
+    </li>
   <% end %>
 </ul>
