@@ -21,9 +21,9 @@
         </ul>
       </div>
 
-      <div class="search-form">
+      <div id="search-form">
         <%= form_tag articles_path, method: 'get' do %>
-            <%= text_field_tag :search, params[:search] %>
+            <%= text_field_tag :search, params[:search], id: 'search-input', data: {autocomplete_source: Version.all.pluck(:title).to_json}  %>
             <%= submit_tag "Search", name: nil %>
         <% end %>
       </div>
