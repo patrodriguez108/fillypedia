@@ -3,6 +3,8 @@
 <% end %>
 
 <%= form_for :version, url: "/articles", method: 'post' do |f| %>
+  <p><%= label_tag(:category, "category") %></p>
+  <%= select_tag(:category, options_for_select(categories_for_dropdown)) %>
   <p><%= label_tag(:title, "title") %></p>
   <%= f.text_field :title %>
   <p><%= label_tag(:photo_url, "featured photo") %></p>
@@ -10,4 +12,6 @@
   <p><%= label_tag(:body, "body") %></p>
   <%= f.cktext_area :body, rows: 10 %>
   <%= f.submit %>
+  <%= check_box_tag(:is_published) %>
+  <%= label_tag(:is_published, "Publish This Version?") %>
 <% end %>
