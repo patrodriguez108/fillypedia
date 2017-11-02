@@ -10,7 +10,7 @@ We are Team Penelope Guten-Morgan
 
 ### Schema
 
-![Schema](schema.png)
+![Schema](schema_updated.png)
 
 ### User Stories
 
@@ -29,7 +29,7 @@ We are Team Penelope Guten-Morgan
 	- user can publish past version or new version
 - Admin user can determine featured articles
 - Admin can make new categories
-- When writing or editing an article, the user can 
+- When writing or editing an article, the user can
 	- access a built-in text editor
 	- upload images
 	- provide links to other articles and external sources (e.g. social media)
