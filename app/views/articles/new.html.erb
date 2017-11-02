@@ -12,4 +12,6 @@
   <p><%= label_tag(:body, "body") %></p>
   <%= f.cktext_area :body, rows: 10 %>
   <%= f.submit %>
+  <%= check_box_tag(:is_published) %>
+  <%= label_tag(:is_published, "Publish This Version?") %>
 <% end %>
