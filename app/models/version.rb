@@ -9,5 +9,4 @@ class Version < ApplicationRecord
       all
     end
   end
-
 end
