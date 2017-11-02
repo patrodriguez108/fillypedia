@@ -1,8 +1,13 @@
 <h1><%= @user.username %>'s Profile Page</h1>
-<p><%= link_to "View Drafts", "/users/#{@user.id}/drafts" %></p>
-<h3>Published Articles:</h3>
+
+<p><%= link_to "View Published Articles", "/users/#{@user.id}" %></p>
+
+<h3>Current Drafts:</h3>
 <ul>
-  <% @user.published_versions.each do |version| %>
+  <% @user.current_draft_versions.each do |version| %>
     <li><%= link_to "#{version.title}", article_version_path(version.article, version) %></li>
   <% end %>
 </ul>
+
+
+

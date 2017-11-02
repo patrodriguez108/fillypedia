@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :created_categories, class_name: "Category", foreign_key: :admin_id
   has_many :versions, foreign_key: :author_id
-  has_many :articles, through: :versions
+  has_many :articles, -> {distinct}, through: :versions
 
   has_secure_password
 
@@ -15,5 +15,15 @@ class User < ApplicationRecord
 
   def published_articles
     self.articles.where(:is_published => true)
+  end
+
+  def current_draft_versions
+    not_yet_published_articles.map { |article|
+      article.versions.last
+    }
+  end
+
+  def not_yet_published_articles
+    self.articles.where(:is_published => false)
   end
 end
