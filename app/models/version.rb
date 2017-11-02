@@ -4,8 +4,12 @@ class Version < ApplicationRecord
 
   def self.search(search)
     all_articles = Article.where(is_published: true)
-    all_articles.map {|article| Version.find(article.published_version_id)}
-    drop_down_search = all_articles.select {|version| version.title == search}
+    p all_articles_versions = []
+    all_articles.each {|article| all_articles_versions << Version.find(article.published_version_id)}
+
+    drop_down_search = all_articles_versions.select {|version| version.title == search}
+    p drop_down_search
+
     titles = drop_down_search.pluck(:title)
 
     if titles.include?(search)
