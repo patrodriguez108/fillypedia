@@ -1,10 +1,11 @@
 <% if @search_results.length > 0 %>
-<% p "falaflalfalfa" %>
+<div>
+  <ul>
   <% @search_results.each do |version| %>
-   <% p "++++++++++++++++" %>
-   <% p version %>
-  <%= link_to version.title, article_version_path(version.article, version) %>
+  <li><%= link_to version.title, article_version_path(version.article, version) %></li>
   <% end %>
+  </ul>
 <% else %>
   <p>There are no results found...</p>
 <% end %>
+</div>
