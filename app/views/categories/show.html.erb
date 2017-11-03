@@ -1,9 +1,11 @@
 <aside><%= render @categories %></aside>
-<h2>Articles in This Category:</h2>
-<div>
-  <ul>
-<% @articles.each do |version| %>
-  <li><%= link_to version.title, article_version_path(version.article, version) %></li>
-<% end %>
-  </ul>
-</div>
+<main>
+  <h2>Articles in This Category:</h2>
+  <div>
+    <ul>
+  <% @articles.each do |version| %>
+    <li><%= link_to version.title, article_version_path(version.article, version) %></li>
+  <% end %>
+    </ul>
+  </div>
+</main>

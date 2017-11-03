@@ -1,18 +1,18 @@
 <aside><%= render @categories %></aside>
+<main>
+  <h1><%= @version.title.html_safe %></h1>
+  <p><%= @version.body.html_safe %></p>
 
-<h1><%= @version.title.html_safe %></h1>
-<p><%= @version.body.html_safe %></p>
 
 
+  <% if authorized?(User.find(@version.author_id)) || is_admin? %>
+  <h3>IT WORKED IT WORKED</h3>
 
-<% if authorized?(User.find(@version.author_id)) || is_admin? %>
-<h3>IT WORKED IT WORKED</h3>
+  <button class="button"><%= link_to "Edit", new_article_version_path(@version.article_id) %></button>
 
-<button class="button"><%= link_to "Edit", new_article_version_path(@version.article_id) %></button>
+  <button class="button"><%= link_to "Delete", "/articles/#{@version.article_id}", method: :delete, data: { confirm: 'Are you certain?' } %></button>
 
-<button class="button"><%= link_to "Delete", "/articles/#{@version.article_id}", method: :delete, data: { confirm: 'Are you certain?' } %></button>
+  <button class="button"><%= link_to "Versions", article_versions_path(@version.article_id) %></button>
 
-<button class="button"><%= link_to "Versions", article_versions_path(@version.article_id) %></button>
-
-<% end %>
-
+  <% end %>
+</main>

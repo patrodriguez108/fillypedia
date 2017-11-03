@@ -1,13 +1,14 @@
 <aside><%= render @categories %></aside>
-
-<% if @search_results.length > 0 %>
-<div>
-  <ul>
-  <% @search_results.each do |version| %>
-  <li><%= link_to version.title, article_version_path(version.article, version) %></li>
+<main>
+  <% if @search_results.length > 0 %>
+  <div>
+    <ul>
+    <% @search_results.each do |version| %>
+    <li><%= link_to version.title, article_version_path(version.article, version) %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <p>There are no results found...</p>
   <% end %>
-  </ul>
-<% else %>
-  <p>There are no results found...</p>
-<% end %>
-</div>
+  </div>
+</main>

@@ -14,3 +14,124 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+
+  background-color: #f2efc7;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+nav li {
+  margin: 5px;
+  padding-left: 10px;
+}
+
+
+main {
+  width: 80%;
+  float: right;
+  padding: 50px;
+  background-color: #f7ffe0;
+  margin-bottom: 100px;
+}
+
+aside {
+  width: 15%;
+  float: left;
+}
+
+footer {
+  clear: both;
+  position: relative;
+  bottom: 0;
+  background-color: #9f7e69;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  padding: 5px;
+}
+
+body {
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Bevan', cursive;
+  font-size: 2.5em;
+  color: #9f7e69;
+  letter-spacing: 2px;
+}
+
+.version-photo {
+  width: 100%;
+  display: block;
+}
+
+.featured-photo {
+  width: 100%;
+}
+
+.recent-articles {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.recent-articles li {
+  display: inline-block;
+  width: 30%;
+  height: 200px;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.recent-articles img {
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+button, input[type=submit] {
+  border: 0;
+  outline: 0;
+  background-color: #9f7e69;
+  color: white;
+ }
+
+h2 a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: #9f7e69;
+}

@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Bevan|Lato" rel="stylesheet">
   </head>
 
   <body>
@@ -37,7 +38,8 @@
         <% end %>
       </div>
     </nav>
+    <h1>Fillypedia</h1>
     <%= yield %>
-    <footer>© Designed & Developed by some Pudgy Pandas. </footer>
   </body>
+  <footer>© Designed & Developed by some Pudgy Pandas. </footer>
 </html>
